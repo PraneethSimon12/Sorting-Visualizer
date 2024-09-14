@@ -22,6 +22,16 @@ bool complete = false;
 bool init(){
     bool success = true;
     if(SDL_INIT(SDL_INIT_VIDEO)<0){
-        cout<<"Couldn't initialize SDL."
+        cout<<"Couldn't initialize SDL.SDL_Error : "<<SDL_GetError();
+        success = false;
+    }
+    else
+    {
+        if(!(SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY,"1")))
+        {
+            cout<<"Warning:  Linear Texture FIltering not enabled.";
+        }
+
+        window = 
     }
 }
