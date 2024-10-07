@@ -32,6 +32,10 @@ bool init(){
             cout<<"Warning:  Linear Texture FIltering not enabled.";
         }
 
-        window = 
+        window = SDL_CreateWindow("Sorting Visualizer", SDL_WINDOWPOX_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        if(window==NULL)
+        {
+            cout<<"Couldn't create window. SDL_Error: "<<SDL_E
+        }
     }
 }
