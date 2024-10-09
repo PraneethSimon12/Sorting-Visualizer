@@ -35,7 +35,19 @@ bool init(){
         window = SDL_CreateWindow("Sorting Visualizer", SDL_WINDOWPOX_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
         if(window==NULL)
         {
-            cout<<"Couldn't create window. SDL_Error: "<<SDL_E
+            cout<<"Couldn't create window. SDL_Error: "<<SDL_GetError();
+            success=false;
         }
+        else
+        {
+            renderer=SDL_CreateRenderer(window,-1,SDL_RENDERER_ACCELERATED);
+            if(renderer==NULL)
+            {
+                cout<<"Couldn't create renderer. SDL_Error :"<<SDL_GetError();
+                success=false;
+            }
+        }  
     }
+    return success;
+
 }
